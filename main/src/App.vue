@@ -47,7 +47,7 @@ header > a {
   margin: 0 20px;
 }
 #appContainer {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.3);
   padding: 20px;
 }
 </style>

@@ -2,7 +2,7 @@
   <div class="home">
     <img
       alt="Vue logo"
-      src="../assets/logo.png"
+      src="../assets/2.jpg"
     />
     <h1>我是 app-vue-hash 的 home页面</h1>
     <span>字体颜色是blue</span>
@@ -42,5 +42,9 @@ export default {
 h1,
 span {
   color: blue;
+}
+img {
+  width: 300px;
+  height: 300px;
 }
 </style>

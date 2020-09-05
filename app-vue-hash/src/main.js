@@ -24,7 +24,7 @@ function render({ data = {} , container } = {}) {
       }
     },
     render: h => h(App),
-  }).$mount(container ? container.querySelector('#appVueHash') : '#appVueHash');
+  }).$mount(container ? container.querySelector('#app') : '#app');
 }
 
 if (!window.__POWERED_BY_QIANKUN__) {
