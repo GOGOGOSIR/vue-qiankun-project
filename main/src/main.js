@@ -10,6 +10,8 @@ import router from './router'
 import store from './store'
 import { registerMicroApps, start } from 'qiankun';
 
+import './style/reset.css'
+
 Vue.config.productionTip = false
 
 new Vue({

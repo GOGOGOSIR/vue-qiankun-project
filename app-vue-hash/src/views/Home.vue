@@ -10,15 +10,23 @@
       v-if="isQiankun"
       @click="changeParentState"
     >主项目的数据：{{ commonData.parent }},点击变为2</span>
+    <div
+      v-if="isQiankun"
+      @click="handleState"
+    >主项目的数据(通过initGlobalState实现共享)：{{ name }},
+      <span>点击将name变为lisi</span>
+    </div>
   </div>
 </template>
 
 <script>
+import actions from '../actions'
 export default {
   name: 'Home',
   data () {
     return {
       isQiankun: window.__POWERED_BY_QIANKUN__,
+      name: ''
     }
   },
   computed: {
@@ -28,12 +36,18 @@ export default {
   },
   mounted () {
     console.log('app-vue-hash Home.vue mounted')
+    actions.onGlobalStateChange((state, pre) => {
+      this.name = state.name
+    }, true)
   },
   methods: {
     changeParentState () {
       if (this.isQiankun) {
         this.$root.parentVuex.commit('setCommonData', { parent: 2 });
       }
+    },
+    handleState() {
+      actions.setGlobalState({name: 'lisi'})
     }
   },
 }

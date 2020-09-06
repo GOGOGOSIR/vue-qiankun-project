@@ -4,13 +4,20 @@ import VueRouter from 'vue-router';
 import App from './App.vue';
 import routes from './router';
 import store from './store';
+import actions from './actions';
 
 Vue.config.productionTip = false;
 
 let router = null;
 let instance = null;
 
-function render({ data = {} , container } = {}) {
+function render({ data = {} , container,  onGlobalStateChange, setGlobalState} = {}) {
+  if (onGlobalStateChange && setGlobalState) {
+    actions.setActions({
+      onGlobalStateChange,
+      setGlobalState
+    })
+  }
   router = new VueRouter({
     routes,
   });
