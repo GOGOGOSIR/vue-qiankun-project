@@ -22,7 +22,7 @@
         <span>initGlobalState共享的name：</span>
         <span>{{name}}</span>
       </p>
-      <button @click="resetName">将name变为zhangsan</button>
+      <el-button type="primary" size="small" @click="resetName">将name变为zhangsan</el-button>
     </div>
   </div>
 </template>
